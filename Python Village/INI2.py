@@ -1,4 +1,4 @@
-## Rosalind: Bioinformatics Stronghold
+## Rosalind: Python Village
 ## Problem: Variables and Some Arithmetic
 ## Vinícius Manoel
 

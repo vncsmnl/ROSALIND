@@ -1,4 +1,4 @@
-## Rosalind: Bioinformatics Stronghold
+## Rosalind: Python Village
 ## Problem: Conditions and Loops
 ## Vinícius Manoel
 
