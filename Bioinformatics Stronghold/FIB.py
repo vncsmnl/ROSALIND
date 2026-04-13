@@ -2,7 +2,6 @@
 ## Problem: Rabbits and Recurrence Relations
 ## Vinícius Manoel
 
-
 n, k = map(int, input("Enter n and k: ").split())
 
 a = 1  # F1
