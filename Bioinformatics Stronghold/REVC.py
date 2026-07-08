@@ -2,11 +2,7 @@
 ## Problem: Complementing a Strand of DNA
 ## Vinícius Manoel
 
-
-def reverse_complement(s: str) -> str:
-    complement = {"A": "T", "T": "A", "C": "G", "G": "C"}
-    return "".join(complement[base] for base in reversed(s))
-
-
+complement = {"A": "T", "T": "A", "C": "G", "G": "C"}
 s = input("DNA string: ").strip()
-print(f"Reverse complement: {reverse_complement(s)}")
+
+print("Reverse complement:", "".join(complement[base] for base in s[::-1]))
