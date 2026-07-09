@@ -4,26 +4,30 @@
 
 
 with open("rosalind_lcsq.txt") as f:
-    s = []
-    seq = ""
-    for line in f:
-        line = line.strip()
-        if line.startswith(">"):
-            if seq:
-                s.append(seq)
-                seq = ""
-        else:
-            seq += line
-    s.append(seq)
+    lines = f.read().splitlines()
 
-a, b = s
+seqs = []
+cur = ""
 
-dp = [[""] * (len(b) + 1) for _ in range(len(a) + 1)]
+for line in lines:
+    if line[0] == ">":
+        if cur:
+            seqs.append(cur)
+            cur = ""
+    else:
+        cur += line
 
-for i in range(len(a)):
-    for j in range(len(b)):
-        if a[i] == b[j]:
-            dp[i + 1][j + 1] = dp[i][j] + a[i]
+seqs.append(cur)
+
+s = seqs[0]
+t = seqs[1]
+
+dp = [[""] * (len(t) + 1) for _ in range(len(s) + 1)]
+
+for i in range(len(s)):
+    for j in range(len(t)):
+        if s[i] == t[j]:
+            dp[i + 1][j + 1] = dp[i][j] + s[i]
         elif len(dp[i][j + 1]) >= len(dp[i + 1][j]):
             dp[i + 1][j + 1] = dp[i][j + 1]
         else:
